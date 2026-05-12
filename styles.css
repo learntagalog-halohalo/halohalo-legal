@@ -1,0 +1,173 @@
+:root {
+  --pink: #FFE5E5;
+  --text: #222;
+  --muted: #666;
+  --line: #f0f0f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Helvetica Neue", sans-serif;
+  background: var(--pink);
+  color: var(--text);
+  line-height: 1.7;
+  padding: 24px 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 18px;
+  padding: 48px 32px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.04);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+header .sub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.last-updated {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.intro {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+section {
+  margin-top: 24px;
+}
+
+section h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+section p {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+section ul {
+  list-style: none;
+  padding-left: 4px;
+}
+
+section ul li {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 4px;
+  padding-left: 16px;
+  position: relative;
+}
+
+section ul li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+}
+
+.note {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  line-height: 1.8;
+}
+
+footer a {
+  color: #78C85A;
+  text-decoration: none;
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #78C85A;
+  text-decoration: none;
+  border: 1px solid #78C85A;
+  border-radius: 18px;
+  margin: 0 4px;
+}
+
+nav a:hover {
+  background: #78C85A;
+  color: white;
+}
+
+.home-cards {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.home-card {
+  display: block;
+  padding: 20px 24px;
+  background: #FAFAFA;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--line);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+
+.home-card .title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.home-card .desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
