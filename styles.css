@@ -139,6 +139,34 @@ nav a:hover {
   color: white;
 }
 
+.lang-switch {
+  text-align: right;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+
+.lang-switch a {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-left: 4px;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: all .15s ease;
+}
+
+.lang-switch a:hover {
+  border-color: #78C85A;
+  color: #78C85A;
+}
+
+.lang-switch a.active {
+  background: #78C85A;
+  color: white;
+  border-color: #78C85A;
+}
+
 .home-cards {
   display: grid;
   gap: 16px;
