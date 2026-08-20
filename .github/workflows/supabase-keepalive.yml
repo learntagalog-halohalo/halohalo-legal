@@ -1,0 +1,25 @@
+# Supabase 無料プランの自動停止（7日間アクティビティなし）を防ぐ定期ping
+# 週2回、REST APIに軽いクエリを投げてアクティビティを発生させる。
+# ※ anon キーはアプリに同梱している公開前提のキー（RLSで保護）なので直書きでOK
+name: Supabase Keepalive
+
+on:
+  schedule:
+    # 月曜・木曜 00:00 UTC（日本時間 9:00）
+    - cron: '0 0 * * 1,4'
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        run: |
+          set -e
+          URL="https://amowkzpnnrlebsepjlkl.supabase.co"
+          KEY="sb_publishable_Q64AibqXwKzglaDMrd_nDg_PRF4lTcf"
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: $KEY" -H "Authorization: Bearer $KEY" \
+            "$URL/rest/v1/user_state?select=user_id&limit=1")
+          echo "REST ping: HTTP $code"
+          test "$code" = "200"
